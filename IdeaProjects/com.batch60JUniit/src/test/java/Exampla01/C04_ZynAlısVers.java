@@ -26,11 +26,11 @@ public class C04_ZynAlısVers {
     }
     @Test
     public void test01(){
-        driver.get("https://www.trendyol.com");
-        driver.findElement(By.xpath("//input[@class='search-box']")).sendKeys("tesettür tunik"+ Keys.ENTER);
-        driver.findElement(By.xpath("(//button[@class='color-options withCoupon'])[13]")).click();
-        driver.findElement(By.xpath("//div[@class='selected sp-itm']")).click();
-        driver.findElement(By.xpath("//div[@class='add-to-basket-button-text']")).click();
+        driver.get("https://www.youtube.com");
+        driver.findElement(By.xpath("//input[@style='outline: none;']")).sendKeys("alagül"+Keys.ENTER);
+        driver.findElement(By.xpath("//yt-formatted-string[@aria-label='Funda Arar - Alagül (Official Video) " +
+                "MEYPOM tarafından 8 yıl önce 4 dakika 14 saniye 5.033.216 görüntüleme']")).click();
+
 
 
 
