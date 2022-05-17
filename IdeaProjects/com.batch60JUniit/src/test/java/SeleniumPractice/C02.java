@@ -49,10 +49,11 @@ public class C02 {
     //WebElement mexicoLink=driver.findElement(By.xpath("(//img[@alt='Mexico'])[1]"));
     WebElement unitedStates=driver.findElement(By.xpath("(//img[@alt='United States'])[1]"));
     WebElement mexicoLink=driver.findElement(RelativeLocator.with(By.tagName("img")).toRightOf(unitedStates));
+    Assert.assertTrue(mexicoLink.isDisplayed());
     }
     @After
     public void tearDown() {
-       // driver.close();
+       driver.close();
     }
 
 }
