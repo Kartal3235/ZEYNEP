@@ -1,6 +1,7 @@
 package ıFrame_Excersic;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -19,25 +20,29 @@ public class C02 {
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get("https://www.rediff.com/");
     }
     @Test
     public void test01() {
 
-        //1) http://demo.guru99.com/test/guru99home/ sitesine gidiniz
-        driver.get("http://demo.guru99.com/test/guru99home/");
-        //2) sayfadaki iframe sayısını bulunuz.
-        int iframeSayısı=driver.findElements(By.tagName("iframe")).size();
+        //https://www.rediff.com/ adresine gidin .
 
-        System.out.println("iframe sayısı: "+iframeSayısı);
-
-        //ilk iframe'deki (Youtube) play butonuna tıklayınız.
-        WebElement iFrameElement=driver.findElement(By.id("a077aa5e"));
+        WebElement iFrameElement=driver.findElement(By.id("moneyiframe"));
         driver.switchTo().frame(iFrameElement);
-
-        //ilk iframe'den çıkıp ana sayfaya dönünüz
-        driver.switchTo().parentFrame();
-
-        //ikinci iframe'deki (Jmeter Made Easy) linke (https://www.guru99.com/live selenium project.html)
-        //tıklayınız
+        WebElement sonucNseYazısı=driver.findElement(By.xpath("//span[@id='nseindex']"));
+        String actualYazı=sonucNseYazısı.getText();
+        System.out.println(actualYazı);
+    }
+    @Test
+    public void test02() {
+       WebElement degerNse=driver.findElement(By.id("moneyiframe"));
+       driver.switchTo().frame(degerNse);
+       WebElement actualNesDeger=driver.findElement(By.xpath("//span[@id='nseindex']"));
+       String degerNs=actualNesDeger.getText();
+        System.out.println(degerNs);
+    }
+    @After
+    public void tearDown() {
+        driver.close();
     }
 }
