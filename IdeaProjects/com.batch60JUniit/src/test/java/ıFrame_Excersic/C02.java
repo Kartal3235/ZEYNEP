@@ -25,21 +25,22 @@ public class C02 {
     @Test
     public void test01() {
 
-        //https://www.rediff.com/ adresine gidin .
+       /* //https://www.rediff.com/ adresine gidin .
 
         WebElement iFrameElement=driver.findElement(By.id("moneyiframe"));
         driver.switchTo().frame(iFrameElement);
         WebElement sonucNseYazısı=driver.findElement(By.xpath("//span[@id='nseindex']"));
         String actualYazı=sonucNseYazısı.getText();
         System.out.println(actualYazı);
+*/
     }
     @Test
     public void test02() {
-       WebElement degerNse=driver.findElement(By.id("moneyiframe"));
+      /* WebElement degerNse=driver.findElement(By.id("moneyiframe"));
        driver.switchTo().frame(degerNse);
        WebElement actualNesDeger=driver.findElement(By.xpath("//span[@id='nseindex']"));
        String degerNs=actualNesDeger.getText();
-        System.out.println(degerNs);
+        System.out.println(degerNs);*/
     }
     @After
     public void tearDown() {
