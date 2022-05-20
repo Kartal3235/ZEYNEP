@@ -30,14 +30,12 @@ public class C01 {
         driver.get("https://www.amazon.com");
         String windowHandle=driver.getWindowHandle();
         System.out.println(driver.getWindowHandle());
-        /*
-        CDwindow-5E4F5879E113B0D1404BDF4D90E96A92==> bu kod acılan sayfanın hash değeridir.
-        Selenium syfalar arası geçişte bu window handle değerini kullanır.
-
-        driver.switchTo().window("CDwindow-5E4F5879E113B0D1404BDF4D90E96A92") bu sayfanın
-        hash değerini girerek bu sayfaya geçiş yapmış oluyoruz
-       */
-        //nutella için arama yapalım
+        //  CWindow-5E4F5879E113B0D1404BDF4D90E96A92==> bu kod acılan sayfanın hash değeridir.
+        //  Selenium syfalar arası geçişte bu window handle değerini kullanır.
+        //
+        //  driver.switchTo().window("CDwindow-5E4F5879E113B0D1404BDF4D90E96A92") bu sayfanın
+        //  hash değerini girerek bu sayfaya geçiş yapmış oluyoruz
+        // nutella için arama yapalım
         driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("nutella"+ Keys.ENTER);
 
         // ilk urunun resmini tıklayarak farklı bir tab olarak açın
@@ -47,7 +45,8 @@ public class C01 {
         WebElement ılkUrunResmı=driver.findElement(By.xpath("//div[@class='a-section aok-relative s-image-square-aspect']"));
         ılkUrunResmı.click();
 
-        // yeni tab'da açılan urunun baslığını yazdırın
+        /* yeni tab'da açılan urunun baslığını yazdırın */
+
         WebElement urununBaslıkYazdır=driver.findElement(By.xpath("//span[@class='a-size-large product-title-word-break']"));
         String actualBaslıkYazdır=urununBaslıkYazdır.getText();
         String[]arr=actualBaslıkYazdır.split(" ");
