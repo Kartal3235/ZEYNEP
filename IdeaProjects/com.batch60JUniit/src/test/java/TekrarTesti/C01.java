@@ -85,8 +85,16 @@ public class C01 extends TestBase {
         Assert.assertTrue(actualYazı.contains("stroller"));
         //5 üçüncü ürüne relative locater kullanarak tıklay in
         WebElement dorduncuurun=driver.findElement(By.xpath("(//div[@class='a-section aok-relative s-image-fixed-height'])[4]"));
-        WebElement ucuncuUrun=driver.findElement(RelativeLocator.with(By.xpath("a-section aok-relative s-image-fixed-height")).above(dorduncuurun));
+        WebElement ucuncuUrun=driver.findElement(RelativeLocator.with(By.xpath("//div[@class='a-section aok-relative s-image-fixed-height']")).above(dorduncuurun));
         ucuncuUrun.click();
         //6 title ve fiyat bilgilerini assign edelim ve ürünü sepete ekley in
+        String actualTitle=driver.getTitle();
+        WebElement fiyatBilgisi=driver.findElement(By.xpath("//*[text()=' Temporarily out of stock. ']"));
+        String actualFiyat=fiyatBilgisi.getText();
+        System.out.println(actualFiyat);
+        driver.findElement(By.xpath("//span[@class='a-button a-button-groupfirst a-spacing-none a-button-base a-declarative']")).click();
+
+
     }
+
 }
