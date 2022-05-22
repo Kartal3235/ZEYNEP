@@ -17,9 +17,8 @@ public class C01 extends TestBase {
         //2. 'http://automationexercise.com' URL'sine gidin
         driver.get("http://automationexercise.com");
         //3. Giriş sayfasının başarıyla göründüğünü doğrulayın
-        String actualUrl=driver.getCurrentUrl();
-        String expectedUrl="https://automationexercise.com/";
-        Assert.assertEquals(expectedUrl,actualUrl);
+        WebElement homePage=driver.findElement(By.xpath("//body"));
+        Assert.assertTrue(homePage.isDisplayed());
 
         //4. 'Kayıt / Giriş' düğmesine tıklayın
         driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
@@ -72,11 +71,27 @@ public class C01 extends TestBase {
         //16. "Kullanıcı adı olarak oturum açtı" seçeneğinin görünür olduğunu doğrulayın
         WebElement otrumActı=driver.findElement(By.xpath("//*[text()=' Logged in as ']"));
         Assert.assertTrue(otrumActı.isDisplayed());
-        //17. 'Hesabı Sil' düğmesine tıklayın
+       /* //17. 'Hesabı Sil' düğmesine tıklayın
         driver.findElement(By.xpath("(//a[@style='color:brown;'])[2]")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-danger button-form js-tooltip']")).click();
         //18. 'HESAP SİLİNDİ!' ifadesinin görünür olduğunu doğrulayın ve 'Devam' düğmesini tıklayın
         WebElement hesapSilindi=driver.findElement(By.xpath("//h1"));
-        Assert.assertTrue(hesapSilindi.isDisplayed());
+        Assert.assertTrue(hesapSilindi.isDisplayed());*/
+        String url=driver.getWindowHandle();
+        System.out.println(url);
+    }
+    @Test
+    public void test02(){
+
+        ////4. 'Bize Ulaşın' düğmesine tıklayın
+        //          WebElement contactUs=driver.findElement(By.xpath("//a[@href=\"/contact_us\"]"));
+        //          contactUs.click();
+        //        //5. 'GET IN CONTACT' ifadesinin görünür olduğunu doğrulayın
+        //        //6. Ad, e-posta, konu ve mesaj girin
+        //        //7. Dosya yükle
+        //        //8. 'Gönder' düğmesine tıklayın
+        //        //9. tık OK düğmesi
+        //        //10. 'Başarılı! Bilgileriniz başarıyla gönderildi.' mesajı görüntülenir
+        //        //11. 'Ana Sayfa' düğmesine tıklayın ve ana sayfaya başarıyla ulaştığını doğrulayın
     }
 }
