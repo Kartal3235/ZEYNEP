@@ -24,8 +24,8 @@ public class C03 extends TestBase {
         WebElement camerasProduct=driver.findElement(By.xpath("//img[@id='camera-img']"));
         action.moveToElement(camerasProduct).doubleClick().perform();
         //4. Popup mesajini yazdirin
-        WebElement popMesajYazdır=driver.findElement(By.xpath("//div[@class='modal-body']"));
-        popMesajYazdır.getText();
+        WebElement popMesajYazdır=driver.findElement(By.xpath("//*[text()='Please Note: All orders must be over the value of £50, adding additional coupon codes to the basket are excluded from this offer. To receive 30% off please add the following code to the basket: ']"));
+        System.out.println(popMesajYazdır.getText());
         //5. “close” butonuna basin
         driver.findElement(By.xpath("//*[text()='Close']")).click();
         Thread.sleep(5000);

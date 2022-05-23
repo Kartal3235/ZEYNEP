@@ -1,4 +1,4 @@
-package excercies;
+package actions.excercies;
 
 import com.github.javafaker.Faker;
 import org.junit.Assert;
