@@ -1,4 +1,4 @@
-package day16_notations;
+package tests.day16_notations;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -51,4 +51,5 @@ public class C03_DependsOnMethod {
 
         System.out.println("bak bu çalıştı");
     }
+
 }
