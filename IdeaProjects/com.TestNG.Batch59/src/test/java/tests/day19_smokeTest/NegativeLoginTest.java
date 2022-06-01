@@ -30,4 +30,29 @@ public class NegativeLoginTest {
     // Bu class da 2 test methodu daha oluşturun
     // biri yanlısKullanıcı ismi
     // diğeride yanlışSifre
+
+
+    @Test
+    public void yanlısKullanıcı() {
+        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+        brcpage.loginClick.click();
+        brcpage.email.sendKeys(ConfigReader.getProperty("brcWrongEmail"));
+        brcpage.password.sendKeys(ConfigReader.getProperty("brcValidPassword"));
+        brcpage.ikinciLoginClick.click();
+
+        Assert.assertTrue(brcpage.ikinciLoginClick.isDisplayed());
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void yanlıs() {
+    Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+    brcpage.loginClick.click();
+    brcpage.password.sendKeys(ConfigReader.getProperty("brcWrongEmail"));
+    brcpage.password.sendKeys(ConfigReader.getProperty("brcWrongPassword"));
+    brcpage.ikinciLoginClick.click();
+
+    Assert.assertTrue(brcpage.ikinciLoginClick.isDisplayed());
+    Driver.closeDriver();
+    }
 }

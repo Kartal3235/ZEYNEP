@@ -26,5 +26,7 @@ public class Q5_DragAndDrop extends TestBase {
                     dragAndDrop(dhtmlpage.Madrid, dhtmlpage.Spain).
                     dragAndDrop(dhtmlpage.Roma, dhtmlpage.Italy).perform();
             Driver.closeDriver();
+
+
       }
 }
