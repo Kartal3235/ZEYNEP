@@ -63,7 +63,7 @@ public class Driver {
             }
 
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();//  burda her seferinde yeni bir pencere acılıyor
+            //driver = new ChromeDriver();//  burda her seferinde yeni bir pencere acılıyor
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
