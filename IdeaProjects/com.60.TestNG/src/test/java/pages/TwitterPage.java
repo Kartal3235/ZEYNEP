@@ -17,7 +17,7 @@ public class TwitterPage {
     public WebElement name;
     @FindBy(xpath = "//input[@name='phone_number']")
     public WebElement phoneNumber;
-    @FindBy(xpath = "//select[@id='SELECTOR_4']")
+    @FindBy(xpath = "//select[@id='SELECTOR_1']")
     public WebElement ddm;
     @FindBy(xpath = "(//span[@class='css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0'])[12]")
     public WebElement nextButton;

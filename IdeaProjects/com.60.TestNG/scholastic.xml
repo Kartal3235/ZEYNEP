@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="belirli class çalıştırma">
+    <test name="belirli class test etme">
+        <classes>
+            <class name="tests.Excercies.Shop.ScholasticClass"></class>
+        </classes>
+    </test>
+</suite>

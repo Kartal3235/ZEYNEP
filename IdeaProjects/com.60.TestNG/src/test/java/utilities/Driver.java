@@ -39,7 +39,7 @@ public class Driver {
             }
 
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();// getDriver() methodunu her çağırdığımızda, driver'a new ChromeDriver atıyor.
+            //driver = new ChromeDriver();// getDriver() methodunu her çağırdığımızda, driver'a new ChromeDriver atıyor.
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
